@@ -1,0 +1,96 @@
+{
+  "name": "Supply Chain Optimization Agent",
+  "description": "AI agent for inventory management, demand forecasting, and supplier coordination",
+  "duration_months": 24,
+  "industry": "manufacturing",
+  "discount_rate": 0.10,
+  "tasks": [
+    {
+      "name": "Demand Forecasting Updates",
+      "hours_per_week": 40,
+      "hourly_rate": 55,
+      "accuracy": 0.92,
+      "oversight_rate": 0.15,
+      "volume_per_week": 500,
+      "time_per_task_minutes": 20,
+      "error_cost": 2000,
+      "baseline_error_rate": 0.18
+    },
+    {
+      "name": "Inventory Optimization Recommendations",
+      "hours_per_week": 35,
+      "hourly_rate": 60,
+      "accuracy": 0.90,
+      "oversight_rate": 0.18,
+      "volume_per_week": 300,
+      "time_per_task_minutes": 25,
+      "error_cost": 5000,
+      "baseline_error_rate": 0.12
+    },
+    {
+      "name": "Supplier Communication",
+      "hours_per_week": 30,
+      "hourly_rate": 45,
+      "accuracy": 0.94,
+      "oversight_rate": 0.10,
+      "volume_per_week": 400,
+      "time_per_task_minutes": 15
+    },
+    {
+      "name": "Purchase Order Processing",
+      "hours_per_week": 45,
+      "hourly_rate": 38,
+      "accuracy": 0.96,
+      "oversight_rate": 0.08,
+      "volume_per_week": 800,
+      "time_per_task_minutes": 12,
+      "error_cost": 500,
+      "baseline_error_rate": 0.04
+    },
+    {
+      "name": "Delivery Tracking and Exception Handling",
+      "hours_per_week": 25,
+      "hourly_rate": 35,
+      "accuracy": 0.93,
+      "oversight_rate": 0.12,
+      "volume_per_week": 600,
+      "time_per_task_minutes": 8
+    }
+  ],
+  "costs": {
+    "initial_development": 95000,
+    "platform_monthly": 4500,
+    "api_cost_per_call": 0.012,
+    "estimated_calls_per_month": 120000,
+    "maintenance_monthly": 2800,
+    "training_initial": 18000,
+    "training_ongoing_monthly": 700,
+    "change_management": 22000
+  },
+  "risk_profile": {
+    "technical_risk": 0.10,
+    "adoption_risk": 0.12,
+    "regulatory_risk": 0.08,
+    "vendor_risk": 0.08
+  },
+  "throughput_config": {
+    "old_capacity": 2500,
+    "new_capacity": 5000,
+    "value_per_unit": 35,
+    "utilization_rate": 0.82,
+    "capacity_unit": "SKU decisions/month"
+  },
+  "latency_config": {
+    "transactions_per_month": 3000,
+    "old_time_hours": 6,
+    "new_time_hours": 0.5,
+    "value_per_hour_saved": 75,
+    "time_sensitivity_factor": 1.8
+  },
+  "optionality_config": {
+    "process_insights_value": 100000,
+    "data_asset_value": 75000,
+    "capability_options_value": 150000,
+    "probability_factor": 0.60
+  }
+}

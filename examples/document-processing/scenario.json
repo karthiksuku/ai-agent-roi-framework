@@ -1,0 +1,87 @@
+{
+  "name": "Invoice Processing Agent",
+  "description": "AI agent for automated invoice processing and accounts payable workflow",
+  "duration_months": 24,
+  "industry": "financial_services",
+  "discount_rate": 0.10,
+  "tasks": [
+    {
+      "name": "Invoice Data Extraction",
+      "hours_per_week": 80,
+      "hourly_rate": 45,
+      "accuracy": 0.94,
+      "oversight_rate": 0.10,
+      "volume_per_week": 2000,
+      "time_per_task_minutes": 12,
+      "error_cost": 200,
+      "baseline_error_rate": 0.08
+    },
+    {
+      "name": "Three-Way Match Validation",
+      "hours_per_week": 40,
+      "hourly_rate": 55,
+      "accuracy": 0.96,
+      "oversight_rate": 0.08,
+      "volume_per_week": 1500,
+      "time_per_task_minutes": 10,
+      "error_cost": 350,
+      "baseline_error_rate": 0.05
+    },
+    {
+      "name": "Vendor Communication",
+      "hours_per_week": 25,
+      "hourly_rate": 42,
+      "accuracy": 0.91,
+      "oversight_rate": 0.15,
+      "volume_per_week": 400,
+      "time_per_task_minutes": 15
+    },
+    {
+      "name": "Exception Handling",
+      "hours_per_week": 30,
+      "hourly_rate": 58,
+      "accuracy": 0.85,
+      "oversight_rate": 0.25,
+      "volume_per_week": 300,
+      "time_per_task_minutes": 20,
+      "error_cost": 500,
+      "baseline_error_rate": 0.12
+    }
+  ],
+  "costs": {
+    "initial_development": 85000,
+    "platform_monthly": 4000,
+    "api_cost_per_call": 0.015,
+    "estimated_calls_per_month": 150000,
+    "maintenance_monthly": 2500,
+    "training_initial": 15000,
+    "training_ongoing_monthly": 600,
+    "change_management": 20000
+  },
+  "risk_profile": {
+    "technical_risk": 0.12,
+    "adoption_risk": 0.15,
+    "regulatory_risk": 0.18,
+    "vendor_risk": 0.10
+  },
+  "throughput_config": {
+    "old_capacity": 8000,
+    "new_capacity": 18000,
+    "value_per_unit": 8,
+    "utilization_rate": 0.80,
+    "capacity_unit": "invoices/month"
+  },
+  "latency_config": {
+    "transactions_per_month": 8000,
+    "old_time_hours": 48,
+    "new_time_hours": 2,
+    "value_per_hour_saved": 2.50,
+    "time_sensitivity_factor": 1.5
+  },
+  "optionality_config": {
+    "process_insights_value": 60000,
+    "data_asset_value": 40000,
+    "capability_options_value": 80000,
+    "probability_factor": 0.50
+  }
+}
