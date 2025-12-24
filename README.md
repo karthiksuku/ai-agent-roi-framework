@@ -251,7 +251,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## Author
 
 **Karthik Sukumar**
-Principal Cloud & AI Solutions Architect, Oracle ANZ
+
 
 ---
 
