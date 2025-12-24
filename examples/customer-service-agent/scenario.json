@@ -1,0 +1,85 @@
+{
+  "name": "Retail Customer Service Agent",
+  "description": "AI agent handling customer inquiries for a mid-size e-commerce retailer",
+  "duration_months": 24,
+  "industry": "retail",
+  "discount_rate": 0.10,
+  "tasks": [
+    {
+      "name": "Email Inquiry Response",
+      "hours_per_week": 60,
+      "hourly_rate": 28,
+      "accuracy": 0.92,
+      "oversight_rate": 0.12,
+      "volume_per_week": 1500,
+      "time_per_task_minutes": 8,
+      "error_cost": 50,
+      "baseline_error_rate": 0.08
+    },
+    {
+      "name": "Order Status Inquiries",
+      "hours_per_week": 40,
+      "hourly_rate": 25,
+      "accuracy": 0.96,
+      "oversight_rate": 0.05,
+      "volume_per_week": 2000,
+      "time_per_task_minutes": 4
+    },
+    {
+      "name": "Returns and Refund Processing",
+      "hours_per_week": 30,
+      "hourly_rate": 30,
+      "accuracy": 0.88,
+      "oversight_rate": 0.18,
+      "volume_per_week": 500,
+      "time_per_task_minutes": 12,
+      "error_cost": 120,
+      "baseline_error_rate": 0.06
+    },
+    {
+      "name": "Product Information Queries",
+      "hours_per_week": 25,
+      "hourly_rate": 26,
+      "accuracy": 0.94,
+      "oversight_rate": 0.08,
+      "volume_per_week": 1200,
+      "time_per_task_minutes": 5
+    }
+  ],
+  "costs": {
+    "initial_development": 45000,
+    "platform_monthly": 2500,
+    "api_cost_per_call": 0.008,
+    "estimated_calls_per_month": 180000,
+    "maintenance_monthly": 1500,
+    "training_initial": 8000,
+    "training_ongoing_monthly": 300,
+    "change_management": 12000
+  },
+  "risk_profile": {
+    "technical_risk": 0.10,
+    "adoption_risk": 0.12,
+    "regulatory_risk": 0.06,
+    "vendor_risk": 0.08
+  },
+  "throughput_config": {
+    "old_capacity": 5000,
+    "new_capacity": 12000,
+    "value_per_unit": 3.50,
+    "utilization_rate": 0.75,
+    "capacity_unit": "inquiries/week"
+  },
+  "latency_config": {
+    "transactions_per_month": 20000,
+    "old_time_hours": 4,
+    "new_time_hours": 0.1,
+    "value_per_hour_saved": 5,
+    "time_sensitivity_factor": 1.2
+  },
+  "optionality_config": {
+    "process_insights_value": 35000,
+    "data_asset_value": 25000,
+    "capability_options_value": 50000,
+    "probability_factor": 0.55
+  }
+}
