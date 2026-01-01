@@ -9,6 +9,16 @@
 
 **A comprehensive, open-source methodology for calculating ROI on AI Agent projects.**
 
+<p align="center">
+  <a href="https://oci.ai-anz.com/aura/">
+    <img src="docs/images/aura-preview.png" alt="AURA Framework Web Calculator" width="800"/>
+  </a>
+</p>
+
+<p align="center">
+  <strong>🚀 <a href="https://oci.ai-anz.com/aura/">Try the Live Calculator</a></strong>
+</p>
+
 ---
 
 ## Overview
