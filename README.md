@@ -235,7 +235,7 @@ If you use the AURA Framework in academic work, please cite:
 @software{aura_framework,
   title = {AURA Framework: AI Utility & Return Assessment},
   author = {Sukumar, Karthik},
-  year = {2024},
+  year = {2026},
   url = {https://github.com/YOUR_USERNAME/ai-agent-roi-framework}
 }
 ```
