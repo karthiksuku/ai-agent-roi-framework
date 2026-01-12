@@ -1,0 +1,188 @@
+{
+  "framework": {
+    "name": "EU Artificial Intelligence Act",
+    "version": "2024",
+    "effective_date": "2024-08-01",
+    "url": "https://artificialintelligenceact.eu/"
+  },
+  "risk_classification": {
+    "unacceptable_risk": {
+      "description": "AI systems that are prohibited",
+      "examples": [
+        "Social scoring by governments",
+        "Real-time biometric identification in public spaces",
+        "Manipulation of human behavior",
+        "Exploitation of vulnerabilities"
+      ],
+      "aura_guidance": "Projects in this category cannot proceed. ROI calculation not applicable."
+    },
+    "high_risk": {
+      "description": "AI systems subject to strict requirements",
+      "categories": [
+        "Biometric identification",
+        "Critical infrastructure",
+        "Education and vocational training",
+        "Employment and worker management",
+        "Essential services access",
+        "Law enforcement",
+        "Migration and border control",
+        "Justice and democratic processes"
+      ],
+      "requirements": [
+        "Risk management system",
+        "Data governance",
+        "Technical documentation",
+        "Record-keeping",
+        "Transparency and user information",
+        "Human oversight",
+        "Accuracy, robustness, and cybersecurity"
+      ],
+      "aura_impact": {
+        "tco_additions": [
+          "Conformity assessment costs",
+          "CE marking costs",
+          "Ongoing compliance monitoring",
+          "Documentation maintenance"
+        ],
+        "risk_adjustments": {
+          "regulatory_risk": "high",
+          "minimum_human_oversight": 0.15
+        }
+      }
+    },
+    "limited_risk": {
+      "description": "AI systems with transparency obligations",
+      "examples": [
+        "Chatbots",
+        "Emotion recognition",
+        "Biometric categorization",
+        "Deep fakes"
+      ],
+      "requirements": [
+        "Disclosure that users are interacting with AI",
+        "Labeling of AI-generated content"
+      ],
+      "aura_impact": {
+        "tco_additions": [
+          "Transparency mechanism implementation",
+          "User notification systems"
+        ],
+        "risk_adjustments": {
+          "regulatory_risk": "medium"
+        }
+      }
+    },
+    "minimal_risk": {
+      "description": "AI systems with no specific requirements",
+      "examples": [
+        "AI-enabled video games",
+        "Spam filters",
+        "Inventory management"
+      ],
+      "aura_impact": {
+        "risk_adjustments": {
+          "regulatory_risk": "low"
+        }
+      }
+    }
+  },
+  "aura_compliance_mapping": {
+    "risk_management_system": {
+      "eu_ai_act_article": "Article 9",
+      "aura_components": [
+        "RiskProfile",
+        "SafetySignals",
+        "SafetyAdjustedROI"
+      ],
+      "implementation_notes": "AURA risk dimensions map to EU AI Act risk categories"
+    },
+    "data_governance": {
+      "eu_ai_act_article": "Article 10",
+      "aura_components": [
+        "ProcessBaseline.data_sources",
+        "SafetySignals.data_leak_incidents"
+      ],
+      "implementation_notes": "Baseline capture includes data provenance documentation"
+    },
+    "technical_documentation": {
+      "eu_ai_act_article": "Article 11",
+      "aura_components": [
+        "Project documentation",
+        "Benchmark references",
+        "Methodology documentation"
+      ],
+      "implementation_notes": "AURA provides structured documentation templates"
+    },
+    "record_keeping": {
+      "eu_ai_act_article": "Article 12",
+      "aura_components": [
+        "MeasurementPlan",
+        "VarianceReport",
+        "SafetySignals tracking"
+      ],
+      "implementation_notes": "Continuous monitoring provides audit trail"
+    },
+    "transparency": {
+      "eu_ai_act_article": "Article 13",
+      "aura_components": [
+        "Executive reports",
+        "Business case documentation"
+      ],
+      "implementation_notes": "AURA reports provide transparent methodology"
+    },
+    "human_oversight": {
+      "eu_ai_act_article": "Article 14",
+      "aura_components": [
+        "SafetySignals.human_override_rate",
+        "SafetySignals.escalation_rate"
+      ],
+      "implementation_notes": "Safety signals track human oversight effectiveness"
+    },
+    "accuracy_robustness_cybersecurity": {
+      "eu_ai_act_article": "Article 15",
+      "aura_components": [
+        "SafetySignals.accuracy_rate",
+        "SafetySignals.availability_percentage",
+        "SafetySignals.data_leak_incidents"
+      ],
+      "implementation_notes": "Safety-adjusted ROI incorporates these factors"
+    }
+  },
+  "conformity_assessment_costs": {
+    "self_assessment": {
+      "estimated_cost_range": {
+        "min": 25000,
+        "max": 75000
+      },
+      "applicable_to": "Most high-risk AI systems"
+    },
+    "third_party_assessment": {
+      "estimated_cost_range": {
+        "min": 50000,
+        "max": 200000
+      },
+      "applicable_to": "Biometric identification systems"
+    },
+    "ongoing_compliance": {
+      "annual_cost_percentage": 0.05,
+      "description": "Estimated as 5% of initial investment annually"
+    }
+  },
+  "penalties": {
+    "prohibited_ai": {
+      "max_fine": 35000000,
+      "or_percentage": 0.07,
+      "basis": "worldwide annual turnover"
+    },
+    "high_risk_non_compliance": {
+      "max_fine": 15000000,
+      "or_percentage": 0.03,
+      "basis": "worldwide annual turnover"
+    },
+    "incorrect_information": {
+      "max_fine": 7500000,
+      "or_percentage": 0.01,
+      "basis": "worldwide annual turnover"
+    }
+  }
+}

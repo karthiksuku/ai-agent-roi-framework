@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Calculator, BarChart3, Settings, FileText, GitCompare, TrendingUp, Save, Upload, Download, Trash2, Play, Info } from 'lucide-react';
+import { Calculator, BarChart3, Settings, FileText, GitCompare, TrendingUp, Save, Upload, Download, Trash2, Play, Info, DollarSign, Shield, Target } from 'lucide-react';
 import { INDUSTRIES, calculateFullResults, runMonteCarloSimulation, runSensitivityAnalysis } from './utils/calculator';
 import { saveScenario, getAllScenarios, deleteScenario, exportScenario, importScenario, exportToPDF } from './utils/storage';
 import ResultsDashboard from './components/ResultsDashboard';
@@ -10,6 +10,9 @@ import AdvancedSettings from './components/AdvancedSettings';
 import SensitivityAnalysis from './components/SensitivityAnalysis';
 import MonteCarloResults from './components/MonteCarloResults';
 import CompareScenarios from './components/CompareScenarios';
+import TCOCalculator from './components/TCOCalculator';
+import BaselineCapture from './components/BaselineCapture';
+import SafetyAnalysis from './components/SafetyAnalysis';
 
 const defaultProject = {
   name: 'New AI Agent Project',
@@ -170,6 +173,9 @@ function App() {
     { id: 'sensitivity', label: 'Sensitivity', icon: TrendingUp },
     { id: 'montecarlo', label: 'Monte Carlo', icon: Play },
     { id: 'compare', label: 'Compare', icon: GitCompare },
+    { id: 'tco', label: 'TCO', icon: DollarSign },
+    { id: 'baseline', label: 'Baseline', icon: Target },
+    { id: 'safety', label: 'Safety', icon: Shield },
     { id: 'settings', label: 'Advanced', icon: Settings }
   ];
 
@@ -395,6 +401,21 @@ function App() {
             savedScenarios={savedScenarios}
             currentProject={project}
             currentResults={results}
+          />
+        )}
+
+        {activeTab === 'tco' && (
+          <TCOCalculator />
+        )}
+
+        {activeTab === 'baseline' && (
+          <BaselineCapture />
+        )}
+
+        {activeTab === 'safety' && (
+          <SafetyAnalysis
+            grossBenefit={results.totalBenefits}
+            totalCost={results.totalCosts}
           />
         )}
 

@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "industry": "manufacturing",
+    "use_case": "quality-control",
+    "version": "1.0.0",
+    "last_updated": "2026-01-01",
+    "data_sources": [
+      "Manufacturing industry benchmarks",
+      "Quality management research",
+      "Industrial automation studies"
+    ],
+    "sample_size": 52,
+    "confidence_level": 0.87,
+    "description": "AI-powered visual inspection and quality control for manufacturing processes"
+  },
+  "baseline_metrics": {
+    "inspection_time_seconds": {
+      "min": 5,
+      "median": 15,
+      "max": 60
+    },
+    "daily_volume": {
+      "min": 1000,
+      "median": 10000,
+      "max": 100000
+    },
+    "defect_detection_rate": {
+      "min": 0.85,
+      "median": 0.92,
+      "max": 0.97
+    },
+    "false_positive_rate": {
+      "min": 0.02,
+      "median": 0.05,
+      "max": 0.12
+    },
+    "cost_per_inspection": {
+      "min": 0.10,
+      "median": 0.50,
+      "max": 2.00
+    },
+    "cost_of_quality_percentage": {
+      "min": 0.02,
+      "median": 0.04,
+      "max": 0.08
+    }
+  },
+  "expected_improvements": {
+    "detection_rate_improvement": {
+      "conservative": 0.03,
+      "moderate": 0.05,
+      "aggressive": 0.08
+    },
+    "false_positive_reduction": {
+      "conservative": 0.40,
+      "moderate": 0.60,
+      "aggressive": 0.80
+    },
+    "inspection_speed_increase": {
+      "conservative": 2.0,
+      "moderate": 5.0,
+      "aggressive": 10.0
+    },
+    "cost_reduction": {
+      "conservative": 0.30,
+      "moderate": 0.50,
+      "aggressive": 0.70
+    },
+    "scrap_reduction": {
+      "conservative": 0.15,
+      "moderate": 0.30,
+      "aggressive": 0.50
+    }
+  },
+  "cost_benchmarks": {
+    "initial_investment": {
+      "small": 75000,
+      "medium": 250000,
+      "large": 750000
+    },
+    "monthly_operational": {
+      "small": 5000,
+      "medium": 18000,
+      "large": 50000
+    },
+    "cost_per_inference": {
+      "min": 0.001,
+      "median": 0.005,
+      "max": 0.02
+    },
+    "implementation_timeline_months": {
+      "small": 3,
+      "medium": 6,
+      "large": 12
+    }
+  },
+  "risk_factors": {
+    "technical_risk": "medium",
+    "adoption_risk": "low",
+    "regulatory_risk": "medium",
+    "vendor_risk": "low",
+    "key_risks": [
+      "Model accuracy across product variations",
+      "Lighting and environmental consistency",
+      "Integration with production line systems",
+      "Training data availability",
+      "Edge computing requirements"
+    ],
+    "mitigation_strategies": [
+      "Comprehensive training dataset development",
+      "Controlled lighting environments",
+      "Staged rollout with human verification",
+      "Regular model retraining cycles"
+    ]
+  },
+  "success_criteria": {
+    "kpis": [
+      {
+        "name": "Defect Detection Rate",
+        "threshold": 0.97,
+        "target": 0.995,
+        "unit": "percentage"
+      },
+      {
+        "name": "False Positive Rate",
+        "threshold": 0.02,
+        "target": 0.005,
+        "unit": "percentage"
+      },
+      {
+        "name": "Inspection Throughput",
+        "threshold": 100,
+        "target": 200,
+        "unit": "units_per_minute"
+      },
+      {
+        "name": "Cost of Quality Reduction",
+        "threshold": 0.20,
+        "target": 0.40,
+        "unit": "percentage"
+      }
+    ],
+    "typical_payback_months": {
+      "min": 6,
+      "median": 12,
+      "max": 20
+    },
+    "typical_roi_range": {
+      "year1": {
+        "min": 1.50,
+        "median": 3.00,
+        "max": 5.00
+      },
+      "year2": {
+        "min": 3.00,
+        "median": 5.00,
+        "max": 8.00
+      },
+      "year3": {
+        "min": 4.00,
+        "median": 6.00,
+        "max": 10.00
+      }
+    }
+  },
+  "maturity_timeline": {
+    "pilot_duration_months": 2,
+    "proven_duration_months": 4,
+    "scaled_duration_months": 6,
+    "time_to_full_value_months": 12
+  },
+  "value_dimensions": {
+    "dla_contribution": 0.25,
+    "ta_contribution": 0.30,
+    "dqp_contribution": 0.35,
+    "lv_contribution": 0.05,
+    "olv_contribution": 0.05
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "industry": "financial-services",
+    "use_case": "fraud-detection",
+    "version": "1.0.0",
+    "last_updated": "2026-01-01",
+    "data_sources": [
+      "Financial services industry reports",
+      "Fraud prevention benchmarking studies",
+      "Regulatory compliance data"
+    ],
+    "sample_size": 62,
+    "confidence_level": 0.88,
+    "description": "AI-powered real-time fraud detection and prevention for financial transactions"
+  },
+  "baseline_metrics": {
+    "avg_handling_time_minutes": {
+      "min": 2,
+      "median": 5,
+      "max": 15
+    },
+    "daily_volume": {
+      "min": 10000,
+      "median": 100000,
+      "max": 1000000
+    },
+    "false_positive_rate": {
+      "min": 0.02,
+      "median": 0.05,
+      "max": 0.12
+    },
+    "false_negative_rate": {
+      "min": 0.001,
+      "median": 0.005,
+      "max": 0.015
+    },
+    "cost_per_investigation": {
+      "min": 25,
+      "median": 75,
+      "max": 150
+    },
+    "fraud_loss_rate": {
+      "min": 0.0005,
+      "median": 0.0015,
+      "max": 0.0035
+    }
+  },
+  "expected_improvements": {
+    "false_positive_reduction": {
+      "conservative": 0.30,
+      "moderate": 0.50,
+      "aggressive": 0.70
+    },
+    "detection_rate_improvement": {
+      "conservative": 0.15,
+      "moderate": 0.30,
+      "aggressive": 0.45
+    },
+    "investigation_time_reduction": {
+      "conservative": 0.25,
+      "moderate": 0.45,
+      "aggressive": 0.65
+    },
+    "fraud_loss_reduction": {
+      "conservative": 0.20,
+      "moderate": 0.40,
+      "aggressive": 0.60
+    }
+  },
+  "cost_benchmarks": {
+    "initial_investment": {
+      "small": 150000,
+      "medium": 500000,
+      "large": 2000000
+    },
+    "monthly_operational": {
+      "small": 15000,
+      "medium": 50000,
+      "large": 200000
+    },
+    "cost_per_inference": {
+      "min": 0.001,
+      "median": 0.005,
+      "max": 0.02
+    },
+    "implementation_timeline_months": {
+      "small": 4,
+      "medium": 8,
+      "large": 14
+    }
+  },
+  "risk_factors": {
+    "technical_risk": "medium",
+    "adoption_risk": "low",
+    "regulatory_risk": "high",
+    "vendor_risk": "medium",
+    "key_risks": [
+      "Model drift due to evolving fraud patterns",
+      "Regulatory compliance (BSA/AML, PCI-DSS)",
+      "Customer experience impact from false positives",
+      "Real-time latency requirements",
+      "Explainability requirements for regulatory audits"
+    ],
+    "mitigation_strategies": [
+      "Continuous model retraining pipeline",
+      "Comprehensive audit logging",
+      "A/B testing for model updates",
+      "Human review for high-value transactions"
+    ]
+  },
+  "success_criteria": {
+    "kpis": [
+      {
+        "name": "Fraud Detection Rate",
+        "threshold": 0.95,
+        "target": 0.99,
+        "unit": "percentage"
+      },
+      {
+        "name": "False Positive Rate",
+        "threshold": 0.03,
+        "target": 0.01,
+        "unit": "percentage"
+      },
+      {
+        "name": "Detection Latency",
+        "threshold": 100,
+        "target": 50,
+        "unit": "milliseconds"
+      },
+      {
+        "name": "Fraud Loss Reduction",
+        "threshold": 0.25,
+        "target": 0.50,
+        "unit": "percentage"
+      }
+    ],
+    "typical_payback_months": {
+      "min": 4,
+      "median": 8,
+      "max": 14
+    },
+    "typical_roi_range": {
+      "year1": {
+        "min": 2.00,
+        "median": 4.00,
+        "max": 7.00
+      },
+      "year2": {
+        "min": 3.50,
+        "median": 6.00,
+        "max": 10.00
+      },
+      "year3": {
+        "min": 4.00,
+        "median": 7.00,
+        "max": 12.00
+      }
+    }
+  },
+  "maturity_timeline": {
+    "pilot_duration_months": 2,
+    "proven_duration_months": 4,
+    "scaled_duration_months": 6,
+    "time_to_full_value_months": 12
+  },
+  "value_dimensions": {
+    "dla_contribution": 0.20,
+    "ta_contribution": 0.15,
+    "dqp_contribution": 0.40,
+    "lv_contribution": 0.20,
+    "olv_contribution": 0.05
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "industry": "retail",
+    "use_case": "customer-service",
+    "version": "1.0.0",
+    "last_updated": "2026-01-01",
+    "data_sources": [
+      "Retail industry benchmarks",
+      "Customer experience research",
+      "Contact center analytics"
+    ],
+    "sample_size": 78,
+    "confidence_level": 0.90,
+    "description": "AI-powered customer service agents for retail inquiries, order management, and support"
+  },
+  "baseline_metrics": {
+    "avg_handling_time_minutes": {
+      "min": 5,
+      "median": 12,
+      "max": 20
+    },
+    "daily_volume": {
+      "min": 200,
+      "median": 1000,
+      "max": 5000
+    },
+    "first_contact_resolution": {
+      "min": 0.55,
+      "median": 0.70,
+      "max": 0.85
+    },
+    "customer_satisfaction": {
+      "min": 3.5,
+      "median": 4.0,
+      "max": 4.6
+    },
+    "cost_per_contact": {
+      "min": 5,
+      "median": 12,
+      "max": 25
+    },
+    "agent_hourly_rate": {
+      "min": 18,
+      "median": 28,
+      "max": 45
+    }
+  },
+  "expected_improvements": {
+    "handling_time_reduction": {
+      "conservative": 0.25,
+      "moderate": 0.45,
+      "aggressive": 0.65
+    },
+    "volume_handled_increase": {
+      "conservative": 0.30,
+      "moderate": 0.50,
+      "aggressive": 0.80
+    },
+    "fcr_improvement": {
+      "conservative": 0.10,
+      "moderate": 0.20,
+      "aggressive": 0.30
+    },
+    "cost_reduction": {
+      "conservative": 0.25,
+      "moderate": 0.45,
+      "aggressive": 0.65
+    },
+    "csat_improvement": {
+      "conservative": 0.05,
+      "moderate": 0.12,
+      "aggressive": 0.20
+    }
+  },
+  "cost_benchmarks": {
+    "initial_investment": {
+      "small": 50000,
+      "medium": 150000,
+      "large": 400000
+    },
+    "monthly_operational": {
+      "small": 3000,
+      "medium": 12000,
+      "large": 35000
+    },
+    "cost_per_inference": {
+      "min": 0.01,
+      "median": 0.05,
+      "max": 0.15
+    },
+    "implementation_timeline_months": {
+      "small": 2,
+      "medium": 4,
+      "large": 8
+    }
+  },
+  "risk_factors": {
+    "technical_risk": "low",
+    "adoption_risk": "medium",
+    "regulatory_risk": "low",
+    "vendor_risk": "low",
+    "key_risks": [
+      "Customer dissatisfaction with bot interactions",
+      "Handling of complex or emotional situations",
+      "Brand voice consistency",
+      "Escalation path effectiveness",
+      "Multi-language support quality"
+    ],
+    "mitigation_strategies": [
+      "Seamless human handoff for complex issues",
+      "Continuous training on brand guidelines",
+      "Sentiment detection for proactive escalation",
+      "Regular customer feedback analysis"
+    ]
+  },
+  "success_criteria": {
+    "kpis": [
+      {
+        "name": "Containment Rate",
+        "threshold": 0.40,
+        "target": 0.65,
+        "unit": "percentage"
+      },
+      {
+        "name": "Customer Satisfaction",
+        "threshold": 4.0,
+        "target": 4.4,
+        "unit": "score_1_5"
+      },
+      {
+        "name": "Cost Per Contact Reduction",
+        "threshold": 0.30,
+        "target": 0.50,
+        "unit": "percentage"
+      },
+      {
+        "name": "Response Time",
+        "threshold": 30,
+        "target": 10,
+        "unit": "seconds"
+      }
+    ],
+    "typical_payback_months": {
+      "min": 4,
+      "median": 8,
+      "max": 14
+    },
+    "typical_roi_range": {
+      "year1": {
+        "min": 1.50,
+        "median": 2.80,
+        "max": 4.50
+      },
+      "year2": {
+        "min": 2.50,
+        "median": 4.00,
+        "max": 6.00
+      },
+      "year3": {
+        "min": 3.00,
+        "median": 4.50,
+        "max": 7.00
+      }
+    }
+  },
+  "maturity_timeline": {
+    "pilot_duration_months": 2,
+    "proven_duration_months": 4,
+    "scaled_duration_months": 6,
+    "time_to_full_value_months": 12
+  },
+  "value_dimensions": {
+    "dla_contribution": 0.45,
+    "ta_contribution": 0.25,
+    "dqp_contribution": 0.15,
+    "lv_contribution": 0.10,
+    "olv_contribution": 0.05
+  }
+}

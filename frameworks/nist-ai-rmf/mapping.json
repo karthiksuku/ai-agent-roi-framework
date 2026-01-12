@@ -1,0 +1,169 @@
+{
+  "framework": {
+    "name": "NIST AI Risk Management Framework",
+    "version": "1.0",
+    "release_date": "2023-01-26",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+  },
+  "aura_mapping": {
+    "govern": {
+      "description": "Cultivate and implement a culture of risk management",
+      "aura_components": [
+        {
+          "component": "RiskProfile",
+          "mapping": "GOVERN 1.1 - Legal and regulatory requirements",
+          "notes": "RiskProfile.regulatory_risk captures compliance considerations"
+        },
+        {
+          "component": "MaturityConfig",
+          "mapping": "GOVERN 1.2 - Organizational AI principles",
+          "notes": "Maturity stages align with organizational readiness"
+        },
+        {
+          "component": "SafetySignals",
+          "mapping": "GOVERN 1.3 - Processes for AI risk management",
+          "notes": "Safety monitoring enables ongoing governance"
+        }
+      ],
+      "checklist_items": [
+        "Define organizational AI policies and principles",
+        "Establish AI risk management roles and responsibilities",
+        "Document regulatory requirements applicable to AI use case",
+        "Create escalation procedures for AI-related risks"
+      ]
+    },
+    "map": {
+      "description": "Contextualize AI system within its operational environment",
+      "aura_components": [
+        {
+          "component": "ProcessBaseline",
+          "mapping": "MAP 1.1 - Intended purposes and context",
+          "notes": "Baseline captures current process context"
+        },
+        {
+          "component": "Task",
+          "mapping": "MAP 1.2 - Interdependencies and interactions",
+          "notes": "Task definitions identify system interactions"
+        },
+        {
+          "component": "IndustryPresets",
+          "mapping": "MAP 2.1 - Scientific integrity and accuracy",
+          "notes": "Industry benchmarks provide accuracy context"
+        }
+      ],
+      "checklist_items": [
+        "Document intended use cases and deployment context",
+        "Identify stakeholders affected by AI system",
+        "Map data flows and system dependencies",
+        "Assess potential for misuse or unintended consequences"
+      ]
+    },
+    "measure": {
+      "description": "Analyze, assess, and track AI risks",
+      "aura_components": [
+        {
+          "component": "AURACalculator",
+          "mapping": "MEASURE 1.1 - Appropriate metrics identified",
+          "notes": "Five value dimensions provide comprehensive metrics"
+        },
+        {
+          "component": "SafetyAdjustedROI",
+          "mapping": "MEASURE 2.1 - Risk assessment",
+          "notes": "Safety-adjusted calculations quantify risks"
+        },
+        {
+          "component": "MonteCarloSimulation",
+          "mapping": "MEASURE 2.2 - Uncertainty quantification",
+          "notes": "Simulation captures outcome uncertainty"
+        },
+        {
+          "component": "VarianceReport",
+          "mapping": "MEASURE 3.1 - Tracking and monitoring",
+          "notes": "Variance analysis tracks actual vs projected"
+        }
+      ],
+      "checklist_items": [
+        "Define quantitative metrics for AI performance",
+        "Establish risk measurement methodologies",
+        "Implement ongoing monitoring and tracking",
+        "Document measurement uncertainty and limitations"
+      ]
+    },
+    "manage": {
+      "description": "Allocate resources to mapped and measured risks",
+      "aura_components": [
+        {
+          "component": "TCOCalculator",
+          "mapping": "MANAGE 1.1 - Risk treatment plans",
+          "notes": "TCO includes risk mitigation costs"
+        },
+        {
+          "component": "MeasurementPlan",
+          "mapping": "MANAGE 2.1 - Risk response implementation",
+          "notes": "Measurement plans define risk response actions"
+        },
+        {
+          "component": "SafetyThresholds",
+          "mapping": "MANAGE 3.1 - Risk monitoring",
+          "notes": "Thresholds trigger risk management actions"
+        }
+      ],
+      "checklist_items": [
+        "Develop risk mitigation strategies",
+        "Allocate resources for risk management",
+        "Establish incident response procedures",
+        "Document lessons learned and continuous improvement"
+      ]
+    }
+  },
+  "risk_categories_mapping": {
+    "aura_technical_risk": [
+      "NIST Reliability",
+      "NIST Robustness",
+      "NIST Accuracy"
+    ],
+    "aura_adoption_risk": [
+      "NIST Human-AI Interaction",
+      "NIST Explainability"
+    ],
+    "aura_regulatory_risk": [
+      "NIST Privacy",
+      "NIST Security",
+      "NIST Fairness"
+    ],
+    "aura_vendor_risk": [
+      "NIST Safe",
+      "NIST Secure"
+    ]
+  },
+  "trustworthy_characteristics_alignment": {
+    "valid_and_reliable": {
+      "aura_metrics": ["accuracy_rate", "consistency_rate"],
+      "description": "AI system performs as intended"
+    },
+    "safe": {
+      "aura_metrics": ["guardrail_intervention_rate", "incident_count"],
+      "description": "AI system does not cause harm"
+    },
+    "secure_and_resilient": {
+      "aura_metrics": ["data_leak_incidents", "availability_percentage"],
+      "description": "AI system maintains security"
+    },
+    "accountable_and_transparent": {
+      "aura_metrics": ["human_override_rate", "escalation_rate"],
+      "description": "AI decisions are explainable"
+    },
+    "explainable_and_interpretable": {
+      "aura_metrics": ["user_correction_rate"],
+      "description": "AI outputs are understandable"
+    },
+    "privacy_enhanced": {
+      "aura_metrics": ["pii_detection_failures"],
+      "description": "Privacy is protected"
+    },
+    "fair_with_harmful_bias_managed": {
+      "aura_metrics": ["error_rate_by_segment"],
+      "description": "Bias is identified and mitigated"
+    }
+  }
+}

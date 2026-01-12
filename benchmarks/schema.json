@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AURA Benchmark Schema",
+  "description": "Schema for industry benchmark data in the AURA Framework",
+  "type": "object",
+  "required": ["metadata", "baseline_metrics", "expected_improvements", "cost_benchmarks"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["industry", "use_case", "version"],
+      "properties": {
+        "industry": {
+          "type": "string",
+          "enum": ["healthcare", "government", "retail", "manufacturing", "financial-services"]
+        },
+        "use_case": {
+          "type": "string",
+          "description": "Specific use case name"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date"
+        },
+        "data_sources": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "confidence_level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "baseline_metrics": {
+      "type": "object",
+      "properties": {
+        "avg_handling_time_minutes": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number" },
+            "median": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        },
+        "daily_volume": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "integer" },
+            "median": { "type": "integer" },
+            "max": { "type": "integer" }
+          }
+        },
+        "error_rate": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number" },
+            "median": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        },
+        "cost_per_transaction": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number" },
+            "median": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        },
+        "fully_loaded_hourly_rate": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number" },
+            "median": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        }
+      }
+    },
+    "expected_improvements": {
+      "type": "object",
+      "properties": {
+        "handling_time_reduction": {
+          "type": "object",
+          "properties": {
+            "conservative": { "type": "number" },
+            "moderate": { "type": "number" },
+            "aggressive": { "type": "number" }
+          }
+        },
+        "error_rate_reduction": {
+          "type": "object",
+          "properties": {
+            "conservative": { "type": "number" },
+            "moderate": { "type": "number" },
+            "aggressive": { "type": "number" }
+          }
+        },
+        "volume_increase": {
+          "type": "object",
+          "properties": {
+            "conservative": { "type": "number" },
+            "moderate": { "type": "number" },
+            "aggressive": { "type": "number" }
+          }
+        },
+        "cost_reduction": {
+          "type": "object",
+          "properties": {
+            "conservative": { "type": "number" },
+            "moderate": { "type": "number" },
+            "aggressive": { "type": "number" }
+          }
+        }
+      }
+    },
+    "cost_benchmarks": {
+      "type": "object",
+      "properties": {
+        "initial_investment": {
+          "type": "object",
+          "properties": {
+            "small": { "type": "number" },
+            "medium": { "type": "number" },
+            "large": { "type": "number" }
+          }
+        },
+        "monthly_operational": {
+          "type": "object",
+          "properties": {
+            "small": { "type": "number" },
+            "medium": { "type": "number" },
+            "large": { "type": "number" }
+          }
+        },
+        "cost_per_inference": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number" },
+            "median": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        }
+      }
+    },
+    "risk_factors": {
+      "type": "object",
+      "properties": {
+        "technical_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "adoption_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "regulatory_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "vendor_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "key_risks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "success_criteria": {
+      "type": "object",
+      "properties": {
+        "kpis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "threshold": { "type": "number" },
+              "target": { "type": "number" },
+              "unit": { "type": "string" }
+            }
+          }
+        },
+        "typical_payback_months": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "integer" },
+            "median": { "type": "integer" },
+            "max": { "type": "integer" }
+          }
+        },
+        "typical_roi_range": {
+          "type": "object",
+          "properties": {
+            "year1": { "type": "object" },
+            "year2": { "type": "object" },
+            "year3": { "type": "object" }
+          }
+        }
+      }
+    },
+    "maturity_timeline": {
+      "type": "object",
+      "properties": {
+        "pilot_duration_months": { "type": "integer" },
+        "proven_duration_months": { "type": "integer" },
+        "scaled_duration_months": { "type": "integer" },
+        "time_to_full_value_months": { "type": "integer" }
+      }
+    }
+  }
+}

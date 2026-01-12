@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "industry": "government",
+    "use_case": "permit-processing",
+    "version": "1.0.0",
+    "last_updated": "2026-01-01",
+    "data_sources": [
+      "Government efficiency studies",
+      "Public sector digital transformation reports",
+      "Municipal operational data"
+    ],
+    "sample_size": 35,
+    "confidence_level": 0.82,
+    "description": "AI-assisted permit application processing, review, and approval workflows"
+  },
+  "baseline_metrics": {
+    "avg_processing_time_days": {
+      "min": 5,
+      "median": 15,
+      "max": 45
+    },
+    "daily_volume": {
+      "min": 20,
+      "median": 100,
+      "max": 500
+    },
+    "error_rate": {
+      "min": 0.08,
+      "median": 0.15,
+      "max": 0.25
+    },
+    "rework_rate": {
+      "min": 0.15,
+      "median": 0.25,
+      "max": 0.40
+    },
+    "cost_per_application": {
+      "min": 50,
+      "median": 125,
+      "max": 300
+    },
+    "citizen_satisfaction": {
+      "min": 2.8,
+      "median": 3.4,
+      "max": 4.0
+    }
+  },
+  "expected_improvements": {
+    "processing_time_reduction": {
+      "conservative": 0.30,
+      "moderate": 0.50,
+      "aggressive": 0.70
+    },
+    "error_rate_reduction": {
+      "conservative": 0.35,
+      "moderate": 0.55,
+      "aggressive": 0.75
+    },
+    "volume_capacity_increase": {
+      "conservative": 0.25,
+      "moderate": 0.45,
+      "aggressive": 0.70
+    },
+    "cost_reduction": {
+      "conservative": 0.20,
+      "moderate": 0.35,
+      "aggressive": 0.50
+    },
+    "satisfaction_improvement": {
+      "conservative": 0.15,
+      "moderate": 0.25,
+      "aggressive": 0.40
+    }
+  },
+  "cost_benchmarks": {
+    "initial_investment": {
+      "small": 100000,
+      "medium": 350000,
+      "large": 1000000
+    },
+    "monthly_operational": {
+      "small": 8000,
+      "medium": 25000,
+      "large": 75000
+    },
+    "cost_per_inference": {
+      "min": 0.03,
+      "median": 0.12,
+      "max": 0.35
+    },
+    "implementation_timeline_months": {
+      "small": 4,
+      "medium": 9,
+      "large": 18
+    }
+  },
+  "risk_factors": {
+    "technical_risk": "medium",
+    "adoption_risk": "high",
+    "regulatory_risk": "high",
+    "vendor_risk": "medium",
+    "key_risks": [
+      "Legacy system integration challenges",
+      "Regulatory compliance requirements",
+      "Staff resistance and union considerations",
+      "Accessibility requirements (ADA, Section 508)",
+      "Procurement process complexity",
+      "Political and public perception concerns"
+    ],
+    "mitigation_strategies": [
+      "Phased implementation with extensive change management",
+      "Clear human oversight for all decisions",
+      "Transparent AI usage disclosure",
+      "Comprehensive accessibility testing",
+      "Stakeholder engagement program"
+    ]
+  },
+  "success_criteria": {
+    "kpis": [
+      {
+        "name": "Processing Time",
+        "threshold": 10,
+        "target": 5,
+        "unit": "days"
+      },
+      {
+        "name": "First-Pass Approval Rate",
+        "threshold": 0.70,
+        "target": 0.85,
+        "unit": "percentage"
+      },
+      {
+        "name": "Citizen Satisfaction",
+        "threshold": 3.8,
+        "target": 4.3,
+        "unit": "score_1_5"
+      },
+      {
+        "name": "Staff Productivity Increase",
+        "threshold": 0.25,
+        "target": 0.50,
+        "unit": "percentage"
+      }
+    ],
+    "typical_payback_months": {
+      "min": 12,
+      "median": 20,
+      "max": 36
+    },
+    "typical_roi_range": {
+      "year1": {
+        "min": 0.30,
+        "median": 0.80,
+        "max": 1.50
+      },
+      "year2": {
+        "min": 1.00,
+        "median": 1.80,
+        "max": 2.80
+      },
+      "year3": {
+        "min": 1.50,
+        "median": 2.50,
+        "max": 3.50
+      }
+    }
+  },
+  "maturity_timeline": {
+    "pilot_duration_months": 4,
+    "proven_duration_months": 8,
+    "scaled_duration_months": 12,
+    "time_to_full_value_months": 24
+  },
+  "value_dimensions": {
+    "dla_contribution": 0.40,
+    "ta_contribution": 0.20,
+    "dqp_contribution": 0.25,
+    "lv_contribution": 0.10,
+    "olv_contribution": 0.05
+  }
+}

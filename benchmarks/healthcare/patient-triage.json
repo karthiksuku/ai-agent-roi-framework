@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "industry": "healthcare",
+    "use_case": "patient-triage",
+    "version": "1.0.0",
+    "last_updated": "2026-01-01",
+    "data_sources": [
+      "Healthcare IT benchmarking studies",
+      "Hospital operational reports",
+      "Academic research on AI in healthcare"
+    ],
+    "sample_size": 45,
+    "confidence_level": 0.85,
+    "description": "AI-powered patient triage and routing in emergency departments and urgent care settings"
+  },
+  "baseline_metrics": {
+    "avg_handling_time_minutes": {
+      "min": 8,
+      "median": 15,
+      "max": 25
+    },
+    "daily_volume": {
+      "min": 50,
+      "median": 200,
+      "max": 500
+    },
+    "error_rate": {
+      "min": 0.05,
+      "median": 0.12,
+      "max": 0.20
+    },
+    "cost_per_transaction": {
+      "min": 15,
+      "median": 28,
+      "max": 45
+    },
+    "fully_loaded_hourly_rate": {
+      "min": 45,
+      "median": 65,
+      "max": 95
+    },
+    "patient_satisfaction_score": {
+      "min": 3.2,
+      "median": 3.8,
+      "max": 4.5
+    }
+  },
+  "expected_improvements": {
+    "handling_time_reduction": {
+      "conservative": 0.20,
+      "moderate": 0.35,
+      "aggressive": 0.50
+    },
+    "error_rate_reduction": {
+      "conservative": 0.25,
+      "moderate": 0.40,
+      "aggressive": 0.55
+    },
+    "volume_increase": {
+      "conservative": 0.15,
+      "moderate": 0.25,
+      "aggressive": 0.40
+    },
+    "cost_reduction": {
+      "conservative": 0.15,
+      "moderate": 0.28,
+      "aggressive": 0.40
+    },
+    "satisfaction_improvement": {
+      "conservative": 0.10,
+      "moderate": 0.20,
+      "aggressive": 0.30
+    }
+  },
+  "cost_benchmarks": {
+    "initial_investment": {
+      "small": 75000,
+      "medium": 200000,
+      "large": 500000
+    },
+    "monthly_operational": {
+      "small": 5000,
+      "medium": 15000,
+      "large": 40000
+    },
+    "cost_per_inference": {
+      "min": 0.02,
+      "median": 0.08,
+      "max": 0.25
+    },
+    "implementation_timeline_months": {
+      "small": 3,
+      "medium": 6,
+      "large": 12
+    }
+  },
+  "risk_factors": {
+    "technical_risk": "medium",
+    "adoption_risk": "high",
+    "regulatory_risk": "high",
+    "vendor_risk": "medium",
+    "key_risks": [
+      "HIPAA compliance requirements",
+      "Clinical staff resistance to AI recommendations",
+      "Integration with existing EHR systems",
+      "Patient safety liability concerns",
+      "Model accuracy in edge cases"
+    ],
+    "mitigation_strategies": [
+      "Mandatory human oversight for all triage decisions",
+      "Comprehensive audit logging",
+      "Regular model validation against clinical outcomes",
+      "Phased rollout with extensive training"
+    ]
+  },
+  "success_criteria": {
+    "kpis": [
+      {
+        "name": "Triage Accuracy",
+        "threshold": 0.92,
+        "target": 0.97,
+        "unit": "percentage"
+      },
+      {
+        "name": "Average Wait Time Reduction",
+        "threshold": 0.15,
+        "target": 0.30,
+        "unit": "percentage"
+      },
+      {
+        "name": "Patient Satisfaction",
+        "threshold": 4.0,
+        "target": 4.5,
+        "unit": "score_1_5"
+      },
+      {
+        "name": "Staff Adoption Rate",
+        "threshold": 0.70,
+        "target": 0.90,
+        "unit": "percentage"
+      }
+    ],
+    "typical_payback_months": {
+      "min": 8,
+      "median": 14,
+      "max": 24
+    },
+    "typical_roi_range": {
+      "year1": {
+        "min": 0.50,
+        "median": 1.20,
+        "max": 2.00
+      },
+      "year2": {
+        "min": 1.50,
+        "median": 2.50,
+        "max": 3.50
+      },
+      "year3": {
+        "min": 2.00,
+        "median": 3.20,
+        "max": 4.50
+      }
+    }
+  },
+  "maturity_timeline": {
+    "pilot_duration_months": 3,
+    "proven_duration_months": 6,
+    "scaled_duration_months": 9,
+    "time_to_full_value_months": 18
+  },
+  "value_dimensions": {
+    "dla_contribution": 0.35,
+    "ta_contribution": 0.25,
+    "dqp_contribution": 0.25,
+    "lv_contribution": 0.10,
+    "olv_contribution": 0.05
+  }
+}
