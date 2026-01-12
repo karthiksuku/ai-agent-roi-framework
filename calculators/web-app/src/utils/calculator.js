@@ -312,31 +312,109 @@ export function runMonteCarloSimulation(project, iterations = 1000) {
     });
   }
 
-  // Calculate percentiles
-  const sortedROI = results.map(r => r.roi).sort((a, b) => a - b);
-  const sortedNPV = results.map(r => r.npv).sort((a, b) => a - b);
-  const sortedPayback = results.map(r => r.payback).filter(p => p !== null).sort((a, b) => a - b);
+  // Extract distribution arrays
+  const roiDistribution = results.map(r => r.roi);
+  const npvDistribution = results.map(r => r.npv);
+  const paybackDistribution = results.map(r => r.payback).filter(p => p !== null);
+
+  // Sort for percentile calculations
+  const sortedROI = [...roiDistribution].sort((a, b) => a - b);
+  const sortedNPV = [...npvDistribution].sort((a, b) => a - b);
+  const sortedPayback = [...paybackDistribution].sort((a, b) => a - b);
 
   const getPercentile = (arr, p) => arr[Math.floor(arr.length * p / 100)] || 0;
 
+  // Calculate standard deviation
+  const calculateStdDev = (arr, mean) => {
+    const squaredDiffs = arr.map(value => Math.pow(value - mean, 2));
+    const avgSquaredDiff = squaredDiffs.reduce((a, b) => a + b, 0) / arr.length;
+    return Math.sqrt(avgSquaredDiff);
+  };
+
+  // Calculate means
+  const roiMean = sortedROI.reduce((a, b) => a + b, 0) / sortedROI.length;
+  const npvMean = sortedNPV.reduce((a, b) => a + b, 0) / sortedNPV.length;
+  const paybackMean = sortedPayback.length > 0 ? sortedPayback.reduce((a, b) => a + b, 0) / sortedPayback.length : null;
+
+  // Calculate standard deviations
+  const roiStdDev = calculateStdDev(sortedROI, roiMean);
+  const npvStdDev = calculateStdDev(sortedNPV, npvMean);
+
   return {
+    roiDistribution,
+    npvDistribution,
+    statistics: {
+      mean: {
+        roi: roiMean,
+        npv: npvMean,
+        payback: paybackMean
+      },
+      median: {
+        roi: getPercentile(sortedROI, 50),
+        npv: getPercentile(sortedNPV, 50),
+        payback: sortedPayback.length > 0 ? getPercentile(sortedPayback, 50) : null
+      },
+      stdDev: {
+        roi: roiStdDev,
+        npv: npvStdDev
+      }
+    },
+    percentiles: {
+      p1: {
+        roi: getPercentile(sortedROI, 1),
+        npv: getPercentile(sortedNPV, 1)
+      },
+      p5: {
+        roi: getPercentile(sortedROI, 5),
+        npv: getPercentile(sortedNPV, 5)
+      },
+      p10: {
+        roi: getPercentile(sortedROI, 10),
+        npv: getPercentile(sortedNPV, 10)
+      },
+      p25: {
+        roi: getPercentile(sortedROI, 25),
+        npv: getPercentile(sortedNPV, 25)
+      },
+      p50: {
+        roi: getPercentile(sortedROI, 50),
+        npv: getPercentile(sortedNPV, 50)
+      },
+      p75: {
+        roi: getPercentile(sortedROI, 75),
+        npv: getPercentile(sortedNPV, 75)
+      },
+      p90: {
+        roi: getPercentile(sortedROI, 90),
+        npv: getPercentile(sortedNPV, 90)
+      },
+      p95: {
+        roi: getPercentile(sortedROI, 95),
+        npv: getPercentile(sortedNPV, 95)
+      },
+      p99: {
+        roi: getPercentile(sortedROI, 99),
+        npv: getPercentile(sortedNPV, 99)
+      }
+    },
+    // Keep legacy format for backwards compatibility
     roi: {
       p10: getPercentile(sortedROI, 10),
       p50: getPercentile(sortedROI, 50),
       p90: getPercentile(sortedROI, 90),
-      mean: sortedROI.reduce((a, b) => a + b, 0) / sortedROI.length
+      mean: roiMean
     },
     npv: {
       p10: getPercentile(sortedNPV, 10),
       p50: getPercentile(sortedNPV, 50),
       p90: getPercentile(sortedNPV, 90),
-      mean: sortedNPV.reduce((a, b) => a + b, 0) / sortedNPV.length
+      mean: npvMean
     },
     payback: {
-      p10: getPercentile(sortedPayback, 10),
-      p50: getPercentile(sortedPayback, 50),
-      p90: getPercentile(sortedPayback, 90),
-      mean: sortedPayback.length > 0 ? sortedPayback.reduce((a, b) => a + b, 0) / sortedPayback.length : null
+      p10: sortedPayback.length > 0 ? getPercentile(sortedPayback, 10) : null,
+      p50: sortedPayback.length > 0 ? getPercentile(sortedPayback, 50) : null,
+      p90: sortedPayback.length > 0 ? getPercentile(sortedPayback, 90) : null,
+      mean: paybackMean
     },
     distribution: results
   };
