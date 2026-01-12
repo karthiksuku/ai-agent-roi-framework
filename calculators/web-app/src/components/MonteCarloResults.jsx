@@ -3,7 +3,25 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Activity, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 
 function MonteCarloResults({ results }) {
+  // Guard against missing or invalid data
+  if (!results || !results.roiDistribution || !results.npvDistribution) {
+    return (
+      <div className="text-center py-12 text-gray-500">
+        <p>No simulation results available. Please run the simulation again.</p>
+      </div>
+    );
+  }
+
   const { roiDistribution, npvDistribution, statistics, percentiles } = results;
+
+  // Guard against empty distributions
+  if (roiDistribution.length === 0 || npvDistribution.length === 0) {
+    return (
+      <div className="text-center py-12 text-gray-500">
+        <p>Simulation produced no results. Please check your input parameters.</p>
+      </div>
+    );
+  }
 
   // Create histogram data for ROI
   const roiHistogram = createHistogram(roiDistribution, 20);
@@ -298,8 +316,18 @@ function ConfidenceBar({ label, low, high, color }) {
 }
 
 function createHistogram(data, bins) {
+  if (!data || data.length === 0) {
+    return [{ range: 'N/A', count: 0 }];
+  }
+
   const min = Math.min(...data);
   const max = Math.max(...data);
+
+  // Handle case where all values are the same
+  if (min === max) {
+    return [{ range: `${min.toFixed(0)}`, count: data.length }];
+  }
+
   const binWidth = (max - min) / bins;
 
   const histogram = Array(bins).fill(0).map((_, i) => ({
@@ -310,7 +338,9 @@ function createHistogram(data, bins) {
 
   data.forEach(value => {
     const binIndex = Math.min(Math.floor((value - min) / binWidth), bins - 1);
-    histogram[binIndex].count++;
+    if (binIndex >= 0 && binIndex < histogram.length) {
+      histogram[binIndex].count++;
+    }
   });
 
   return histogram.map(bin => ({
